@@ -7,7 +7,7 @@ const clearBtn = document.querySelector("#clear");
 for (let i = 0; i < 16 * 16; i++) {
   let cell = document.createElement("div");
   cell.addEventListener("mouseover", () => {
-    cell.style.backgroundColor = "black";
+    cell.style.backgroundColor = "darkgray";
   });
   container.appendChild(cell).classList.add("cell");
 }
@@ -15,9 +15,9 @@ for (let i = 0; i < 16 * 16; i++) {
 // Functions.
 function newSketch() {
   let gridSize = Number(
-    prompt("Choose the new grid size between 1 and 100: ", "")
+    prompt("Choose the new grid size between 2 and 100: ", "")
   );
-  if (!Number.isInteger(gridSize) || gridSize > 100 || gridSize < 1) {
+  if (!Number.isInteger(gridSize) || gridSize > 100 || gridSize < 2) {
     alert("Choose a number between 1 and 100");
     return;
   }
@@ -32,7 +32,7 @@ function newSketch() {
   for (let i = 0; i < gridSize * gridSize; i++) {
     let cell = document.createElement("div");
     cell.addEventListener("mouseover", () => {
-      cell.style.backgroundColor = "black";
+      cell.style.backgroundColor = "darkgray";
     });
     container.style.gridTemplateRows = `repeat(${gridSize}, auto)`;
     container.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
@@ -46,6 +46,6 @@ newSketchBtn.addEventListener("click", () => newSketch());
 clearBtn.addEventListener("click", () => {
   let cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
-    cell.style.backgroundColor = "white";
+    cell.style.backgroundColor = "lightgray";
   });
 });
