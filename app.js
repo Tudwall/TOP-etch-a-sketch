@@ -19,6 +19,7 @@ function newSketch() {
   );
   if (!Number.isInteger(gridSize) || gridSize > 100 || gridSize < 1) {
     alert("Choose a number between 1 and 100");
+    return;
   }
 
   // Delete the existing grid
