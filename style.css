@@ -16,14 +16,19 @@ h1 {
   margin-bottom: 1vh;
 }
 
-#reset {
+#new-sketch {
   margin-bottom: 1vh;
 }
 
+#clear {
+  margin-bottom: 5vh;
+}
+
 #container {
-  height: 50vh;
-  width: 50vw;
+  height: 900px;
+  width: 900px;
   margin: auto;
+  border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(16, auto);
   grid-template-rows: repeat(16, auto);
