@@ -57,3 +57,14 @@ button {
 .cell {
   background-color: lightgray;
 }
+
+/* @media (max-width: 500px) {
+  main {
+    width: 75%;
+  }
+
+  #container {
+    width: 250px;
+    height: 250px;
+  }
+} */
