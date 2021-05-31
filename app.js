@@ -2,6 +2,8 @@
 const container = document.querySelector("#container");
 const newSketchBtn = document.querySelector("#new-sketch");
 const clearBtn = document.querySelector("#clear");
+const rainbowBtn = document.querySelector("#rainbow");
+const grayBtn = document.querySelector("#gray");
 
 // Generates a grid.
 for (let i = 0; i < 16 * 16; i++) {
@@ -40,6 +42,24 @@ function newSketch() {
   }
 }
 
+function randomColor() {
+  let cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
+      cell.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    });
+  });
+}
+
+function grayColor() {
+  let cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
+      cell.style.backgroundColor = "darkgray";
+    });
+  });
+}
+
 // Event Listeners.
 newSketchBtn.addEventListener("click", () => newSketch());
 
@@ -49,3 +69,6 @@ clearBtn.addEventListener("click", () => {
     cell.style.backgroundColor = "lightgray";
   });
 });
+
+rainbowBtn.addEventListener("click", () => randomColor());
+grayBtn.addEventListener("click", () => grayColor());
